@@ -311,32 +311,30 @@ export default function Index() {
               </div>
               <p
                 className="font-montserrat animate-fade-up-delay"
-                style={{ color: 'rgba(201,169,110,0.8)', fontSize: '10px', letterSpacing: '0.4em', marginTop: '20px', textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}
+                style={{ color: 'rgba(201,169,110,0.8)', fontSize: '10px', letterSpacing: '0.4em', marginTop: '4px', textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}
               >
                 Спешелти кофе из Эфиопии
               </p>
+              <div style={{ marginTop: '28px' }}>
+                <button
+                  onClick={() => navigate('catalog')}
+                  className="font-montserrat cursor-pointer animate-fade-up-delay-2"
+                  style={{
+                    border: '1px solid var(--kaldy-gold)', color: 'var(--kaldy-gold)',
+                    background: 'transparent', padding: '14px 48px',
+                    fontSize: '11px', letterSpacing: '0.3em',
+                    transition: 'all 0.4s ease'
+                  }}
+                  onMouseEnter={e => { const el = e.currentTarget; el.style.background = 'var(--kaldy-gold)'; el.style.color = 'var(--kaldy-ink)'; }}
+                  onMouseLeave={e => { const el = e.currentTarget; el.style.background = 'transparent'; el.style.color = 'var(--kaldy-gold)'; }}
+                >
+                  ПЕРЕЙТИ В КАТАЛОГ
+                </button>
+              </div>
             </div>
 
             {/* Decorative vertical line right */}
             <div className="absolute" style={{ right: '60px', top: '50%', transform: 'translateY(-50%)', width: '1px', height: '180px', background: 'linear-gradient(to bottom, transparent, rgba(201,169,110,0.5), transparent)', zIndex: 2 }} />
-
-            {/* Bottom CTA */}
-            <div className="absolute" style={{ bottom: '64px', left: '50%', transform: 'translateX(-50%)', zIndex: 2 }}>
-              <button
-                onClick={() => navigate('catalog')}
-                className="font-montserrat cursor-pointer animate-fade-up-delay-2"
-                style={{
-                  border: '1px solid var(--kaldy-gold)', color: 'var(--kaldy-gold)',
-                  background: 'transparent', padding: '14px 48px',
-                  fontSize: '11px', letterSpacing: '0.3em',
-                  transition: 'all 0.4s ease'
-                }}
-                onMouseEnter={e => { const el = e.currentTarget; el.style.background = 'var(--kaldy-gold)'; el.style.color = 'var(--kaldy-ink)'; }}
-                onMouseLeave={e => { const el = e.currentTarget; el.style.background = 'transparent'; el.style.color = 'var(--kaldy-gold)'; }}
-              >
-                ПЕРЕЙТИ В КАТАЛОГ
-              </button>
-            </div>
           </section>
 
           {/* ABOUT STRIP */}
