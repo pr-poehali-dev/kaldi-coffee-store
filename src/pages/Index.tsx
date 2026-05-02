@@ -104,7 +104,7 @@ export default function Index() {
     <div className="min-h-screen" style={{ background: 'var(--kaldy-ink)', color: 'var(--kaldy-cream)' }}>
 
       {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-4" style={{ background: 'rgba(13,17,23,0.9)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(201,169,110,0.12)' }}>
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-1" style={{ background: 'rgba(13,17,23,0.9)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(201,169,110,0.12)' }}>
         <button
           onClick={() => navigate('home')}
           className="flex items-center gap-3 cursor-pointer bg-transparent border-none"
