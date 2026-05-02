@@ -295,7 +295,7 @@ export default function Index() {
               style={{ left: '60px', top: '50%', transform: 'translateY(-50%)', paddingTop: '80px', zIndex: 2 }}
             >
               <div style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', transform: 'rotate(180deg)' }}>
-                <h1 className="font-cormorant animate-fade-up" style={{ fontSize: 'clamp(42px, 6vw, 90px)', color: 'var(--kaldy-gold)', fontWeight: 300, letterSpacing: '0.1em', lineHeight: 1, textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
+                <h1 className="font-cormorant animate-fade-up" style={{ fontSize: 'clamp(28px, 4vw, 60px)', color: 'var(--kaldy-gold)', fontWeight: 300, letterSpacing: '0.1em', lineHeight: 1, textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
                   ПЕРВАЯ ЛЕГЕНДА О БОДРОСТИ
                 </h1>
               </div>
@@ -307,7 +307,7 @@ export default function Index() {
               style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)', paddingTop: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: 2 }}
             >
               <div className="animate-float">
-                <img src={LOGO_IMG} alt="КАЛДИ" style={{ width: '180px', height: '180px', objectFit: 'contain', filter: 'drop-shadow(0 8px 32px rgba(0,0,0,0.6))' }} />
+                <img src={LOGO_IMG} alt="КАЛДИ" style={{ width: '180px', height: '180px', objectFit: 'contain', mixBlendMode: 'lighten', filter: 'drop-shadow(0 4px 16px rgba(0,0,0,0.4))' }} />
               </div>
               <p
                 className="font-montserrat animate-fade-up-delay"
