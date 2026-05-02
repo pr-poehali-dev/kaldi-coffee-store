@@ -292,10 +292,10 @@ export default function Index() {
             {/* Left vertical title */}
             <div
               className="absolute flex"
-              style={{ left: '60px', top: '50%', transform: 'translateY(-50%)', paddingTop: '80px', zIndex: 2 }}
+              style={{ left: '0', top: '0', bottom: '0', width: '64px', alignItems: 'center', justifyContent: 'center', paddingTop: '80px', zIndex: 2 }}
             >
-              <div style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', transform: 'rotate(180deg)' }}>
-                <h1 className="font-cormorant animate-fade-up" style={{ fontSize: 'clamp(28px, 4vw, 60px)', color: 'var(--kaldy-gold)', fontWeight: 300, letterSpacing: '0.1em', lineHeight: 1, textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
+              <div style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', transform: 'rotate(180deg)', maxHeight: 'calc(100vh - 80px)', overflow: 'hidden' }}>
+                <h1 className="font-cormorant animate-fade-up" style={{ fontSize: 'clamp(14px, 2.2vh, 36px)', color: 'var(--kaldy-gold)', fontWeight: 300, letterSpacing: '0.12em', lineHeight: 1, textShadow: '0 2px 20px rgba(0,0,0,0.5)', whiteSpace: 'nowrap' }}>
                   ПЕРВАЯ ЛЕГЕНДА О БОДРОСТИ
                 </h1>
               </div>
