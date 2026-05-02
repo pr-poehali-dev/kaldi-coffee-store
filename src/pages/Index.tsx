@@ -307,7 +307,7 @@ export default function Index() {
               style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)', paddingTop: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: 2 }}
             >
               <div className="animate-float">
-                <img src={LOGO_IMG} alt="КАЛДИ" style={{ width: '180px', height: '180px', objectFit: 'contain', mixBlendMode: 'lighten', filter: 'drop-shadow(0 4px 16px rgba(0,0,0,0.4))' }} />
+                <img src="https://cdn.poehali.dev/projects/30384ace-2599-49b8-baed-5d648f5f374c/bucket/683c5a86-feb1-4076-b41a-ce7b467ed641.png" alt="КАЛДИ" style={{ width: '220px', height: '220px', objectFit: 'contain', filter: 'drop-shadow(0 4px 16px rgba(0,0,0,0.4))' }} />
               </div>
               <p
                 className="font-montserrat animate-fade-up-delay"
