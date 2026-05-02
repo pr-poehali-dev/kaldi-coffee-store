@@ -4,89 +4,45 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 27 20% 13%;
+    --foreground: 35 25% 90%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 215 28% 17%;
+    --card-foreground: 35 25% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 215 28% 17%;
+    --popover-foreground: 35 25% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 36 48% 60%;
+    --primary-foreground: 27 20% 10%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 17 27% 52%;
+    --secondary-foreground: 35 25% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 215 20% 22%;
+    --muted-foreground: 35 15% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 36 48% 60%;
+    --accent-foreground: 27 20% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 35 20% 28%;
+    --input: 35 20% 28%;
+    --ring: 36 48% 60%;
+
+    --radius: 0rem;
+
+    /* КАЛДИ brand tokens */
+    --kaldy-mocha: #a47764;
+    --kaldy-indigo: #1b2430;
+    --kaldy-gold: #c9a96e;
+    --kaldy-gold-light: #e2c898;
+    --kaldy-opal: #e8e2d9;
+    --kaldy-terra: #b07d62;
+    --kaldy-ink: #0d1117;
+    --kaldy-cream: #f2ede6;
   }
 }
 
@@ -97,5 +53,268 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Cormorant Garamond", serif;
+  }
+}
+
+@layer utilities {
+  .font-cormorant {
+    font-family: "Cormorant Garamond", serif;
+  }
+  .font-montserrat {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  /* Gold border button */
+  .btn-gold {
+    border: 1px solid var(--kaldy-gold);
+    color: var(--kaldy-gold);
+    background: transparent;
+    letter-spacing: 0.15em;
+    transition: all 0.4s ease;
+  }
+  .btn-gold:hover {
+    background: var(--kaldy-gold);
+    color: var(--kaldy-ink);
+  }
+
+  /* Texture overlay */
+  .texture-overlay {
+    position: relative;
+  }
+  .texture-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 150px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Vertical text */
+  .text-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+  }
+
+  /* Sacred geometry symbols */
+  .geo-symbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--kaldy-gold);
+  }
+
+  /* Card emboss */
+  .card-emboss {
+    box-shadow:
+      inset 0 1px 0 rgba(201, 169, 110, 0.15),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.3),
+      0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Page stripe */
+  .stripe-philosophy {
+    min-height: 100vh;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--kaldy-indigo);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--kaldy-gold);
+  }
+
+  /* Photo sepia hover */
+  .photo-sepia {
+    filter: sepia(0.8) contrast(1.1) brightness(0.9);
+    transition: filter 0.6s ease;
+  }
+  .photo-sepia:hover {
+    filter: sepia(0) contrast(1) brightness(1);
+  }
+
+  /* Grain overlay on hero */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.06'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes shimmer {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-fade-up {
+    animation: fade-up 1s ease forwards;
+  }
+  .animate-fade-up-delay {
+    animation: fade-up 1s ease 0.3s forwards;
+    opacity: 0;
+  }
+  .animate-fade-up-delay-2 {
+    animation: fade-up 1s ease 0.6s forwards;
+    opacity: 0;
+  }
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  /* Tower of Grain CSS 3D */
+  .grain-tower {
+    width: 120px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: float 6s ease-in-out infinite;
+  }
+  .grain-tower-body {
+    width: 120px;
+    height: 200px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #8b6355, #5c3d2e, #8b6355);
+    border: 1px solid var(--kaldy-gold);
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      -8px 0 20px rgba(0, 0, 0, 0.5),
+      8px 0 20px rgba(201, 169, 110, 0.1);
+  }
+  .grain-tower-slot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 8px;
+    background: rgba(34, 60, 34, 0.8);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  .grain-tower-slot::before {
+    content: "●";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4px;
+    color: #4a7c4a;
+  }
+
+  .weight-btn {
+    border: 1px solid var(--kaldy-gold);
+    color: var(--kaldy-gold);
+    background: transparent;
+    padding: 8px 16px;
+    letter-spacing: 0.1em;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .weight-btn.active {
+    background: var(--kaldy-terra);
+    color: var(--kaldy-cream);
+    border-color: var(--kaldy-terra);
+  }
+  .weight-btn:hover:not(.active) {
+    background: rgba(201, 169, 110, 0.1);
+  }
+
+  .cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -480px;
+    width: 480px;
+    height: 100vh;
+    background: var(--kaldy-indigo);
+    border-left: 1px solid rgba(201, 169, 110, 0.3);
+    z-index: 1000;
+    transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    overflow-y: auto;
+  }
+  .cart-sidebar.open {
+    right: 0;
+  }
+  .cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+  .cart-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-line {
+    width: 24px;
+    height: 1px;
+    background: var(--kaldy-gold);
+    display: block;
+    transition: all 0.3s ease;
   }
 }
