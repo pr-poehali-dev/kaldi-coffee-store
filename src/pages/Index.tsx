@@ -292,10 +292,10 @@ export default function Index() {
             {/* Left vertical title */}
             <div
               className="absolute flex"
-              style={{ left: '32px', top: '0', bottom: '0', width: '100px', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '80px', zIndex: 2 }}
+              style={{ left: '32px', top: '0', bottom: '0', width: '130px', alignItems: 'center', justifyContent: 'center', paddingTop: '80px', zIndex: 2 }}
             >
-              <div style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', transform: 'rotate(180deg)', height: 'calc(100vh - 80px)', display: 'flex', alignItems: 'center' }}>
-                <h1 className="font-cormorant animate-fade-up" style={{ fontSize: 'clamp(22px, 4vh, 56px)', color: 'var(--kaldy-gold)', fontWeight: 300, letterSpacing: '0.15em', lineHeight: 1.15, textShadow: '0 2px 20px rgba(0,0,0,0.5)', wordBreak: 'keep-all', overflowWrap: 'normal' }}>
+              <div style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', transform: 'rotate(180deg)', height: 'calc(100vh - 80px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <h1 className="font-cormorant animate-fade-up" style={{ fontSize: 'clamp(30px, 5.5vh, 72px)', color: 'var(--kaldy-gold)', fontWeight: 300, letterSpacing: '0.15em', lineHeight: 1.15, textShadow: '0 2px 20px rgba(0,0,0,0.5)', textAlign: 'center' }}>
                   ПЕРВАЯ ЛЕГЕНДА<br />О БОДРОСТИ
                 </h1>
               </div>
