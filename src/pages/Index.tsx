@@ -109,7 +109,7 @@ export default function Index() {
           onClick={() => navigate('home')}
           className="flex items-center gap-3 cursor-pointer bg-transparent border-none"
         >
-          <img src={LOGO_IMG} alt="КАЛДИ" style={{ height: '44px', width: '44px', objectFit: 'contain' }} />
+          <img src={LOGO_IMG} alt="КАЛДИ" style={{ height: '72px', width: '72px', objectFit: 'contain' }} />
           <span className="font-cormorant text-xl tracking-[0.35em]" style={{ color: 'var(--kaldy-gold)', fontWeight: 300 }}>КАЛДИ</span>
         </button>
 
