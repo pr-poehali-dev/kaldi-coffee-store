@@ -306,7 +306,7 @@ export default function Index() {
               className="absolute"
               style={{ left: '50%', top: '45%', transform: 'translate(-50%, -50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: 2 }}
             >
-              <div className="animate-float">
+              <div className="animate-float" style={{ marginBottom: '-60px' }}>
                 <img src="https://cdn.poehali.dev/projects/30384ace-2599-49b8-baed-5d648f5f374c/bucket/683c5a86-feb1-4076-b41a-ce7b467ed641.png" alt="КАЛДИ" style={{ width: '340px', height: '340px', objectFit: 'contain', filter: 'drop-shadow(0 6px 24px rgba(0,0,0,0.5))', imageRendering: 'crisp-edges' }} />
               </div>
               <p
