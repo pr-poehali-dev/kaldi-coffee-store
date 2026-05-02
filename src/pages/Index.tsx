@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
-const COFFEE_IMG = 'https://cdn.poehali.dev/projects/30384ace-2599-49b8-baed-5d648f5f374c/files/2f401320-d26d-4a96-a648-e42208a3a47f.jpg';
-const HIGHLAND_IMG = 'https://cdn.poehali.dev/projects/30384ace-2599-49b8-baed-5d648f5f374c/files/59aabe1e-24b5-4346-aa35-a1c477299035.jpg';
-const CERAMIC_IMG = 'https://cdn.poehali.dev/projects/30384ace-2599-49b8-baed-5d648f5f374c/files/c42ac3cd-0a7e-4c8e-99e9-6934d43cfc06.jpg';
+const LOGO_IMG = 'https://cdn.poehali.dev/projects/30384ace-2599-49b8-baed-5d648f5f374c/bucket/27f6c9a0-b20c-4569-9146-1f39ebfae0aa.png';
+const ENTRANCE_IMG = 'https://cdn.poehali.dev/projects/30384ace-2599-49b8-baed-5d648f5f374c/bucket/00cfcb86-d04f-4f84-a595-9662a981e64c.png';
+const RECEPTION_IMG = 'https://cdn.poehali.dev/projects/30384ace-2599-49b8-baed-5d648f5f374c/bucket/85ff0ae6-d93f-4510-8f06-9040d51f07b8.png';
+const COLUMN_IMG = 'https://cdn.poehali.dev/projects/30384ace-2599-49b8-baed-5d648f5f374c/bucket/46d7a5c1-96ff-4421-bda7-bd603237215a.png';
+const PACKAGE_IMG = 'https://cdn.poehali.dev/projects/30384ace-2599-49b8-baed-5d648f5f374c/bucket/1a21f2b3-e1eb-48d0-b7f4-bc9cf0f9cc90.png';
 
 const products = [
   {
@@ -16,7 +18,7 @@ const products = [
     descriptors: ['◭', '◯', '△'],
     desc: 'Жасмин, бергамот, лимонный цвет',
     price: 890,
-    image: COFFEE_IMG,
+    image: PACKAGE_IMG,
   },
   {
     id: 2,
@@ -28,7 +30,7 @@ const products = [
     descriptors: ['◭', '▽', '◯'],
     desc: 'Персик, чёрный чай, жасмин',
     price: 950,
-    image: CERAMIC_IMG,
+    image: PACKAGE_IMG,
   },
   {
     id: 3,
@@ -40,7 +42,7 @@ const products = [
     descriptors: ['◯', '△', '◭'],
     desc: 'Черника, какао, карамель',
     price: 860,
-    image: COFFEE_IMG,
+    image: PACKAGE_IMG,
   },
 ];
 
@@ -102,13 +104,13 @@ export default function Index() {
     <div className="min-h-screen" style={{ background: 'var(--kaldy-ink)', color: 'var(--kaldy-cream)' }}>
 
       {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-6" style={{ background: 'rgba(13,17,23,0.9)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(201,169,110,0.12)' }}>
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-4" style={{ background: 'rgba(13,17,23,0.9)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(201,169,110,0.12)' }}>
         <button
           onClick={() => navigate('home')}
-          className="font-cormorant text-2xl tracking-[0.3em] cursor-pointer bg-transparent border-none"
-          style={{ color: 'var(--kaldy-gold)', fontWeight: 300 }}
+          className="flex items-center gap-3 cursor-pointer bg-transparent border-none"
         >
-          КАЛДИ
+          <img src={LOGO_IMG} alt="КАЛДИ" style={{ height: '44px', width: '44px', objectFit: 'contain' }} />
+          <span className="font-cormorant text-xl tracking-[0.35em]" style={{ color: 'var(--kaldy-gold)', fontWeight: 300 }}>КАЛДИ</span>
         </button>
 
         <div className="hidden md:flex items-center gap-10">
@@ -272,68 +274,54 @@ export default function Index() {
             className="relative min-h-screen flex items-center overflow-hidden"
             style={{ background: 'var(--kaldy-mocha)' }}
           >
-            {/* Texture / gradient overlay */}
+            {/* Real entrance photo as background */}
+            <img
+              src={ENTRANCE_IMG}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ zIndex: 0 }}
+            />
+            {/* Dark overlay to ensure text readability */}
+            <div className="absolute inset-0" style={{ background: 'rgba(13,17,23,0.55)', zIndex: 1 }} />
+            {/* Warm vignette */}
             <div className="absolute inset-0" style={{
-              backgroundImage: 'radial-gradient(ellipse at 25% 50%, rgba(164,119,100,0.3) 0%, transparent 55%), radial-gradient(ellipse at 75% 30%, rgba(60,35,20,0.6) 0%, transparent 50%)',
-            }} />
-            {/* Grain noise */}
-            <div className="absolute inset-0 pointer-events-none" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.05'/%3E%3C/svg%3E")`,
-              backgroundRepeat: 'repeat', backgroundSize: '200px', zIndex: 1
+              backgroundImage: 'radial-gradient(ellipse at 50% 100%, rgba(164,119,100,0.25) 0%, transparent 60%)',
+              zIndex: 1
             }} />
 
             {/* Left vertical title */}
             <div
-              className="absolute z-10 flex"
-              style={{ left: '60px', top: '50%', transform: 'translateY(-50%)', paddingTop: '80px' }}
+              className="absolute flex"
+              style={{ left: '60px', top: '50%', transform: 'translateY(-50%)', paddingTop: '80px', zIndex: 2 }}
             >
               <div style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', transform: 'rotate(180deg)' }}>
-                <h1 className="font-cormorant animate-fade-up" style={{ fontSize: 'clamp(48px, 7vw, 100px)', color: 'var(--kaldy-gold)', fontWeight: 300, letterSpacing: '0.1em', lineHeight: 1 }}>
+                <h1 className="font-cormorant animate-fade-up" style={{ fontSize: 'clamp(42px, 6vw, 90px)', color: 'var(--kaldy-gold)', fontWeight: 300, letterSpacing: '0.1em', lineHeight: 1, textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
                   ПЕРВАЯ ЛЕГЕНДА О БОДРОСТИ
                 </h1>
               </div>
             </div>
 
-            {/* Center: Floating Grain Tower */}
+            {/* Center: Logo + tagline */}
             <div
-              className="absolute z-10"
-              style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)', paddingTop: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+              className="absolute"
+              style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)', paddingTop: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: 2 }}
             >
               <div className="animate-float">
-                <div style={{
-                  width: '90px', height: '220px',
-                  background: 'linear-gradient(160deg, #7A5040 0%, #3D2018 45%, #7A5040 100%)',
-                  borderRadius: '6px', border: '1px solid rgba(201,169,110,0.45)',
-                  position: 'relative', overflow: 'hidden',
-                  boxShadow: '-12px 0 35px rgba(0,0,0,0.65), 12px 0 20px rgba(201,169,110,0.07), inset 0 0 25px rgba(0,0,0,0.35)'
-                }}>
-                  {[28, 56, 84, 112, 140, 170, 196].map((top, i) => (
-                    <div key={i} style={{
-                      position: 'absolute', left: '50%', top: `${top}px`,
-                      transform: 'translateX(-50%)',
-                      width: '40px', height: '5px',
-                      background: 'rgba(25,45,25,0.9)', borderRadius: '3px',
-                      boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.8)'
-                    }}>
-                      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: '5px', height: '5px', borderRadius: '50%', background: '#4a7c4a', opacity: 0.8 }} />
-                    </div>
-                  ))}
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,0,0,0.3) 0%, transparent 50%, rgba(201,169,110,0.04) 100%)' }} />
-                </div>
+                <img src={LOGO_IMG} alt="КАЛДИ" style={{ width: '180px', height: '180px', objectFit: 'contain', filter: 'drop-shadow(0 8px 32px rgba(0,0,0,0.6))' }} />
               </div>
               <p
                 className="font-montserrat animate-fade-up-delay"
-                style={{ color: 'rgba(201,169,110,0.65)', fontSize: '10px', letterSpacing: '0.35em', marginTop: '28px' }}
+                style={{ color: 'rgba(201,169,110,0.8)', fontSize: '10px', letterSpacing: '0.4em', marginTop: '20px', textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}
               >
                 Спешелти кофе из Эфиопии
               </p>
             </div>
 
             {/* Decorative vertical line right */}
-            <div className="absolute z-10" style={{ right: '60px', top: '50%', transform: 'translateY(-50%)', width: '1px', height: '180px', background: 'linear-gradient(to bottom, transparent, rgba(201,169,110,0.5), transparent)' }} />
+            <div className="absolute" style={{ right: '60px', top: '50%', transform: 'translateY(-50%)', width: '1px', height: '180px', background: 'linear-gradient(to bottom, transparent, rgba(201,169,110,0.5), transparent)', zIndex: 2 }} />
 
             {/* Bottom CTA */}
-            <div className="absolute z-10" style={{ bottom: '64px', left: '50%', transform: 'translateX(-50%)' }}>
+            <div className="absolute" style={{ bottom: '64px', left: '50%', transform: 'translateX(-50%)', zIndex: 2 }}>
               <button
                 onClick={() => navigate('catalog')}
                 className="font-montserrat cursor-pointer animate-fade-up-delay-2"
@@ -355,12 +343,12 @@ export default function Index() {
           <section className="py-28 px-10 md:px-20" style={{ background: 'var(--kaldy-indigo)', borderTop: '1px solid rgba(201,169,110,0.12)' }}>
             <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-20 items-center">
               <div>
-                <p className="font-montserrat text-xs tracking-[0.3em] mb-6" style={{ color: 'var(--kaldy-gold)' }}>О БРЕНДЕ</p>
+                <p className="font-montserrat text-xs tracking-[0.3em] mb-6" style={{ color: 'var(--kaldy-gold)' }}>О МАГАЗИНЕ</p>
                 <h2 className="font-cormorant text-5xl mb-8 leading-tight" style={{ color: 'var(--kaldy-cream)', fontWeight: 300 }}>
-                  Легенда рождается<br />в горах Эфиопии
+                  Башня зерна —<br />сердце пространства
                 </h2>
                 <p className="font-montserrat text-sm leading-8" style={{ color: 'rgba(242,237,230,0.55)' }}>
-                  Калди — пастух, который открыл кофе. Его козы танцевали ночью после того, как поели красных ягод. Мы следуем этому пути — от конкретной фермы до вашей чашки.
+                  В центре магазина — арт-объект: глиняная колонна с вертикальными прорезями, сквозь которые видны пересыпающиеся зёрна. Это не декорация. Это зерно, которое вы купите.
                 </p>
                 <button
                   onClick={() => navigate('ritual')}
@@ -371,8 +359,8 @@ export default function Index() {
                 </button>
               </div>
               <div className="relative">
-                <img src={HIGHLAND_IMG} alt="Эфиопское нагорье" className="w-full object-cover" style={{ height: '340px', filter: 'sepia(0.35) contrast(1.1)', border: '1px solid rgba(201,169,110,0.2)' }} />
-                <div className="absolute" style={{ bottom: '-12px', right: '-12px', width: '100%', height: '100%', border: '1px solid rgba(201,169,110,0.18)', zIndex: -1 }} />
+                <img src={COLUMN_IMG} alt="Арт-объект — Башня зерна" className="w-full object-cover" style={{ height: '400px', border: '1px solid rgba(201,169,110,0.2)' }} />
+                <div className="absolute" style={{ bottom: '-12px', right: '-12px', width: '100%', height: '100%', border: '1px solid rgba(201,169,110,0.15)', zIndex: -1 }} />
               </div>
             </div>
           </section>
@@ -395,25 +383,19 @@ export default function Index() {
               </div>
 
               <div className="grid md:grid-cols-3 gap-8">
-                {products.map((p, i) => (
+                {products.map((p) => (
                   <article
                     key={p.id}
                     onClick={() => { setSelectedProduct(p); navigate('product'); }}
                     className="cursor-pointer group"
                   >
-                    <div className="relative overflow-hidden mb-5" style={{ border: '1px solid rgba(201,169,110,0.15)' }}>
+                    <div className="relative overflow-hidden mb-5" style={{ background: '#2a1f14', border: '1px solid rgba(201,169,110,0.2)' }}>
                       <img
                         src={p.image} alt={p.name}
-                        className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        style={{ height: '260px' }}
+                        className="w-full object-contain transition-transform duration-700 group-hover:scale-105"
+                        style={{ height: '280px', padding: '20px' }}
                       />
-                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(13,17,23,0.85) 0%, transparent 55%)' }} />
-                      <div className="absolute bottom-5 left-5 flex gap-3">
-                        {p.descriptors.map((d, j) => (
-                          <span key={j} style={{ color: 'var(--kaldy-gold)', fontSize: '18px' }}>{d}</span>
-                        ))}
-                      </div>
-                      <div className="absolute top-3 right-3 font-montserrat" style={{ fontSize: '9px', background: 'rgba(13,17,23,0.75)', color: 'var(--kaldy-gold)', border: '1px solid rgba(201,169,110,0.25)', padding: '3px 8px', letterSpacing: '0.12em' }}>
+                      <div className="absolute top-3 right-3 font-montserrat" style={{ fontSize: '9px', background: 'rgba(13,17,23,0.8)', color: 'var(--kaldy-gold)', border: '1px solid rgba(201,169,110,0.3)', padding: '3px 8px', letterSpacing: '0.12em' }}>
                         {p.roast}
                       </div>
                     </div>
@@ -467,24 +449,26 @@ export default function Index() {
                 <article
                   key={p.id}
                   className="cursor-pointer group"
-                  style={{ background: 'var(--kaldy-terra)', borderRadius: '3px', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(201,169,110,0.12), inset 0 -1px 0 rgba(0,0,0,0.25), 0 6px 24px rgba(0,0,0,0.35)' }}
+                  style={{ background: '#1a1208', borderRadius: '3px', overflow: 'hidden', border: '1px solid rgba(201,169,110,0.18)', boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}
                   onClick={() => { setSelectedProduct(p); navigate('product'); }}
                 >
-                  <div className="relative overflow-hidden" style={{ height: '280px' }}>
-                    <img src={p.image} alt={p.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(13,17,23,0.92) 0%, rgba(13,17,23,0.15) 55%)' }} />
-                    <div className="absolute bottom-5 left-5 flex gap-3">
+                  <div className="relative overflow-hidden flex items-center justify-center" style={{ height: '300px', background: '#241a0e' }}>
+                    <img src={p.image} alt={p.name} className="object-contain transition-transform duration-700 group-hover:scale-105" style={{ height: '260px', padding: '16px' }} />
+                    <div className="absolute top-3 right-3 font-montserrat" style={{ fontSize: '9px', background: 'rgba(13,9,4,0.85)', color: 'var(--kaldy-gold)', border: '1px solid rgba(201,169,110,0.3)', padding: '3px 8px', letterSpacing: '0.15em' }}>
+                      {p.roast}
+                    </div>
+                    <div className="absolute bottom-4 left-5 flex gap-3">
                       {p.descriptors.map((d, j) => (
-                        <span key={j} style={{ color: 'var(--kaldy-gold)', fontSize: '20px' }}>{d}</span>
+                        <span key={j} style={{ color: 'var(--kaldy-gold)', fontSize: '18px', opacity: 0.7 }}>{d}</span>
                       ))}
                     </div>
                   </div>
                   <div className="p-6">
                     <p className="font-cormorant text-xl tracking-[0.12em] mb-1" style={{ color: 'var(--kaldy-cream)' }}>{p.name}</p>
-                    <p className="font-montserrat mb-5" style={{ color: 'rgba(242,237,230,0.45)', fontSize: '10px', letterSpacing: '0.08em' }}>{p.altitude} · {p.process}</p>
+                    <p className="font-montserrat mb-5" style={{ color: 'rgba(242,237,230,0.4)', fontSize: '10px', letterSpacing: '0.08em' }}>{p.altitude} · {p.process}</p>
                     <div className="flex items-center justify-between">
                       <span className="font-cormorant text-2xl" style={{ color: 'var(--kaldy-gold-light)' }}>{p.price} ₽ / 200 г</span>
-                      <span className="font-montserrat" style={{ fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(242,237,230,0.65)', borderBottom: '1px solid rgba(242,237,230,0.25)', paddingBottom: '1px' }}>
+                      <span className="font-montserrat" style={{ fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(242,237,230,0.6)', borderBottom: '1px solid rgba(242,237,230,0.2)', paddingBottom: '1px' }}>
                         УЗНАТЬ ПОДРОБНЕЕ
                       </span>
                     </div>
@@ -501,8 +485,8 @@ export default function Index() {
         <section className="min-h-screen" style={{ background: 'var(--kaldy-ink)', paddingTop: '80px' }}>
           <div className="grid md:grid-cols-2 min-h-screen">
             {/* Left: image */}
-            <div className="relative overflow-hidden" style={{ minHeight: '70vh', background: 'var(--kaldy-indigo)' }}>
-              <img src={selectedProduct.image} alt={selectedProduct.name} className="w-full h-full object-cover" style={{ minHeight: '70vh', display: 'block' }} />
+            <div className="relative overflow-hidden flex items-center justify-center" style={{ minHeight: '70vh', background: '#1a1208' }}>
+              <img src={selectedProduct.image} alt={selectedProduct.name} className="object-contain" style={{ maxHeight: '70vh', maxWidth: '90%', padding: '40px' }} />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(13,17,23,0.45) 0%, transparent 55%)' }} />
               <button
                 onClick={() => navigate('catalog')}
@@ -588,7 +572,7 @@ export default function Index() {
         <div className="min-h-screen">
           {/* Stripe 1 */}
           <div className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: '100vh' }}>
-            <img src={HIGHLAND_IMG} alt="Эфиопское нагорье" className="absolute inset-0 w-full h-full object-cover" style={{ filter: 'grayscale(1) contrast(1.1) brightness(0.45)' }} />
+            <img src={COLUMN_IMG} alt="Башня зерна" className="absolute inset-0 w-full h-full object-cover" style={{ filter: 'grayscale(0.3) brightness(0.4) contrast(1.1)' }} />
             <div className="relative z-10 text-center px-10 max-w-3xl">
               <p className="font-montserrat mb-8" style={{ color: 'rgba(201,169,110,0.55)', fontSize: '10px', letterSpacing: '0.4em' }}>ФИЛОСОФИЯ · КАЛДИ</p>
               <blockquote className="font-cormorant leading-relaxed" style={{ color: 'var(--kaldy-cream)', fontWeight: 300, fontSize: 'clamp(26px,3.5vw,48px)' }}>
@@ -637,12 +621,19 @@ export default function Index() {
             <div className="max-w-6xl mx-auto">
               <p className="font-montserrat mb-16 text-center" style={{ color: 'var(--kaldy-gold)', fontSize: '10px', letterSpacing: '0.4em' }}>ПРОСТРАНСТВО</p>
               <div className="grid md:grid-cols-3 gap-6">
-                {[HIGHLAND_IMG, COFFEE_IMG, CERAMIC_IMG].map((img, i) => (
-                  <div key={i} className="overflow-hidden" style={{ height: '340px', border: '1px solid rgba(201,169,110,0.12)' }}>
+                {[
+                  { img: ENTRANCE_IMG, label: 'Входная группа' },
+                  { img: RECEPTION_IMG, label: 'Ресепшен и касса' },
+                  { img: COLUMN_IMG, label: 'Башня зерна' },
+                ].map(({ img, label }, i) => (
+                  <div key={i} className="overflow-hidden relative group" style={{ height: '340px', border: '1px solid rgba(201,169,110,0.12)' }}>
                     <img
-                      src={img} alt=""
+                      src={img} alt={label}
                       className="photo-sepia w-full h-full object-cover"
                     />
+                    <div className="absolute bottom-0 left-0 right-0 py-3 px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-400" style={{ background: 'linear-gradient(to top, rgba(13,17,23,0.8), transparent)' }}>
+                      <p className="font-montserrat" style={{ fontSize: '10px', color: 'var(--kaldy-gold)', letterSpacing: '0.2em' }}>{label.toUpperCase()}</p>
+                    </div>
                   </div>
                 ))}
               </div>
