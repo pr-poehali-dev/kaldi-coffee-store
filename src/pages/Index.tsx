@@ -584,20 +584,7 @@ export default function Index() {
           <div className="py-28 px-10 md:px-20 relative overflow-hidden" style={{ background: 'var(--kaldy-mocha)' }}>
             <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
               <div>
-                <svg viewBox="0 0 220 220" className="w-full max-w-xs mx-auto" fill="none" stroke="var(--kaldy-gold)" strokeWidth="0.7" opacity="0.65">
-                  <ellipse cx="95" cy="130" rx="48" ry="30" />
-                  <ellipse cx="148" cy="122" rx="24" ry="20" />
-                  <line x1="123" y1="122" x2="136" y2="122" />
-                  <line x1="62" y1="160" x2="57" y2="185" />
-                  <line x1="78" y1="160" x2="73" y2="185" />
-                  <line x1="105" y1="160" x2="100" y2="185" />
-                  <line x1="122" y1="158" x2="117" y2="185" />
-                  <line x1="143" y1="105" x2="137" y2="82" />
-                  <line x1="147" y1="105" x2="154" y2="80" />
-                  <circle cx="153" cy="118" r="3.5" />
-                  <line x1="95" y1="100" x2="80" y2="74" />
-                  <ellipse cx="60" cy="44" rx="9" ry="14" transform="rotate(-22 60 44)" />
-                </svg>
+                <img src="https://cdn.poehali.dev/projects/30384ace-2599-49b8-baed-5d648f5f374c/bucket/39031283-a456-4118-8c08-8413518683f7.png" alt="История Калди" className="w-full max-w-sm mx-auto" style={{ objectFit: 'cover', borderRadius: '2px' }} />
               </div>
               <div>
                 <p className="font-montserrat mb-6" style={{ color: 'rgba(242,237,230,0.45)', fontSize: '10px', letterSpacing: '0.3em' }}>ЛЕГЕНДА · IX ВЕК</p>
